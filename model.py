@@ -65,3 +65,20 @@ class PasswordGeneratorModel:
     def copy_to_clipboard(self):
         """Copies `password` to the clipboard"""
         subprocess.run("pbcopy", input=self.password.encode("utf-8"), check=True)
+
+    def add_to_keychain(self, server: str, username: str):
+        """Adds `password` to your iCloud keychain with `server` and `username`"""
+        command = [
+            "security",
+            "add-internet-password",
+            "-s",
+            f"{server} ({username})",
+            "-a",
+            username,
+            "-w",
+            self.password,
+        ]
+        subprocess.run(
+            command,
+            check=True,
+        )

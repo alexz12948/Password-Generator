@@ -11,9 +11,10 @@ import sys
 from PyQt6.QtCore import QSize, Qt, QTimer
 from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import (QApplication, QCheckBox, QHBoxLayout, QLabel,
-                             QMainWindow, QPushButton, QSlider, QVBoxLayout,
-                             QWidget)
+                             QMainWindow, QMessageBox, QPushButton, QSlider,
+                             QVBoxLayout, QWidget)
 
+from keychain_dialog import KeychainDialog
 from model import PasswordGeneratorModel
 
 # Min/max lengths of the password
@@ -106,6 +107,10 @@ class PasswordGeneratorWindow(QMainWindow):
         checkbox_row.addWidget(self.symbol_checkbox)
         self.main_layout.addLayout(checkbox_row)
 
+        self.add_to_keychain_btn = QPushButton("Add to Keychain")
+        self.add_to_keychain_btn.clicked.connect(self.add_to_keychain)
+        self.main_layout.addWidget(self.add_to_keychain_btn)
+
         self.timer = QTimer()
         self.timer.timeout.connect(self.update_button_to_default)
 
@@ -159,6 +164,22 @@ class PasswordGeneratorWindow(QMainWindow):
         self.copy_button.setText("Copied")
         self.copy_button.setEnabled(False)
         self.timer.start(1000)
+
+    def add_to_keychain(self):
+        """Creates a dialog window to prompt for server and username information
+        and then saves everything to iCloud Keychain
+        """
+        dlg = KeychainDialog(self)
+
+        if dlg.exec():
+            self._model.add_to_keychain(
+                dlg.server_input.text(), dlg.username_input.text()
+            )
+            QMessageBox.information(
+                self,
+                "Successful Save",
+                f"The password {self.password.text()} was successfully added to your keychain",
+            )
 
 
 def main():

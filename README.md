@@ -5,6 +5,7 @@ Generates a GUI that allows users to:
 * Enter the web server and username
 * Generates a secure password
 * Saves the password to the clipboard
+* Saves the password to iCloud Keychain
 
 ## Demo
 
@@ -26,6 +27,6 @@ if needed
 ## Features to Add
 
 - [x] P0: Ability to generate passwords with some configuration
-- [ ] P0: Ability to save password to keychain
+- [x] P0: Ability to save password to keychain
 - [ ] P0: Add in PyInstaller to create an App
 - [ ] P1: Refactor view to multiple components
