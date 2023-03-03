@@ -25,6 +25,7 @@ if needed
 
 ## Features to Add
 
+- [x] P0: Ability to generate passwords with some configuration
 - [ ] P0: Ability to save password to keychain
 - [ ] P0: Add in PyInstaller to create an App
 - [ ] P1: Refactor view to multiple components
