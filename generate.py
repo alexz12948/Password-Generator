@@ -68,7 +68,6 @@ class PasswordGeneratorWindow(QMainWindow):
 
         self.password = QLabel(self._model.password)
         self.regenerate_button = QPushButton("")
-        # self.regenerate_button.setIcon(QIcon(self.get_path("refresh-icon.png")))
         self.regenerate_button.setIcon(QIcon(os.path.join(BASEDIR, "refresh-icon.png")))
         self.regenerate_button.setIconSize(QSize(20, 20))
         self.regenerate_button.setToolTip("Generate another password")
