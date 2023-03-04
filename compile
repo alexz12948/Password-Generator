@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ -e 'Generate Password.spec' ]; then
+    pyinstaller --noconfirm Generate\ Password.spec
+else
+    pyinstaller --noconfirm --onefile --windowed --noconsole --add-data="refresh-icon.png:." --icon icon.icns --name "Generate Password" generate.py
+fi
