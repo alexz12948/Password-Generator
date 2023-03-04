@@ -45,3 +45,4 @@ a [link to the documentation](https://pyinstaller.org/en/stable/usage.html) to h
 
 - Used DALL-E 2 to generate icon for the app
 - Used [Dashlane's Password Generator](https://www.dashlane.com/personal-password-manager/password-generator) for inspiration for some of the GUI
+- Used [this website](https://www.pythonguis.com/latest/) for some of their tutorials to see how I could do some things
