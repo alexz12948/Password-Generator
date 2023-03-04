@@ -12,6 +12,10 @@ Generates a GUI that allows users to:
 
 ![Password Generator Demo](./demo.gif)
 
+## Application
+
+![Password Generator App Icon](./app_image.png)
+
 ## Inspiration
 
 I was inspired by the fact that Apple Keychain occasionally does not recognize a
@@ -36,3 +40,8 @@ a [link to the documentation](https://pyinstaller.org/en/stable/usage.html) to h
 - [x] P0: Ability to save password to keychain
 - [x] P0: Add in PyInstaller to create an App
 - [ ] P1: Refactor view to multiple components
+
+## Resources
+
+- Used DALL-E 2 to generate icon for the app
+- Used [Dashlane's Password Generator](https://www.dashlane.com/personal-password-manager/password-generator) for inspiration for some of the GUI
