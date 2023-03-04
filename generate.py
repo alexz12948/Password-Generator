@@ -21,6 +21,7 @@ from model import PasswordGeneratorModel
 MIN_LEN = 5
 MAX_LEN = 40
 
+# Necessary for finding icon
 BASEDIR = os.path.dirname(__file__)
 
 
@@ -56,14 +57,6 @@ class PasswordGeneratorWindow(QMainWindow):
         self.setCentralWidget(widget)
 
         self._create_ui()
-
-    # @staticmethod
-    # def get_path(filename):
-    #     """TODO"""
-    #     if hasattr(sys, "_MEIPASS"):
-    #         return os.path.join(sys._MEIPASS, filename)
-
-    #     return filename
 
     def _create_ui(self):
         header = QLabel(
