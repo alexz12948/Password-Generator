@@ -39,7 +39,9 @@ a [link to the documentation](https://pyinstaller.org/en/stable/usage.html) to h
 - [x] P0: Ability to generate passwords with some configuration
 - [x] P0: Ability to save password to keychain
 - [x] P0: Add in PyInstaller to create an App
-- [ ] P1: Refactor view to multiple components
+- [ ] P2: Refactor view to multiple components
+    - This may be a useful future feature, but I think having all of the GUI components in one location
+    is fine for the time being
 
 ## Resources
 
