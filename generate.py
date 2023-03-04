@@ -5,7 +5,7 @@ Date: March 2023
 Holds the view/controller for the entire program and all of the relevant
 functions to allow the GUI to function
 """
-
+import os
 import sys
 
 from PyQt6.QtCore import QSize, Qt, QTimer
@@ -20,6 +20,8 @@ from model import PasswordGeneratorModel
 # Min/max lengths of the password
 MIN_LEN = 5
 MAX_LEN = 40
+
+BASEDIR = os.path.dirname(__file__)
 
 
 class PasswordGeneratorWindow(QMainWindow):
@@ -55,6 +57,14 @@ class PasswordGeneratorWindow(QMainWindow):
 
         self._create_ui()
 
+    # @staticmethod
+    # def get_path(filename):
+    #     """TODO"""
+    #     if hasattr(sys, "_MEIPASS"):
+    #         return os.path.join(sys._MEIPASS, filename)
+
+    #     return filename
+
     def _create_ui(self):
         header = QLabel(
             "<h1>Password Generator</h1>Automatically generate and save passwords to Apple Keychain"
@@ -65,7 +75,8 @@ class PasswordGeneratorWindow(QMainWindow):
 
         self.password = QLabel(self._model.password)
         self.regenerate_button = QPushButton("")
-        self.regenerate_button.setIcon(QIcon("refresh-icon.png"))
+        # self.regenerate_button.setIcon(QIcon(self.get_path("refresh-icon.png")))
+        self.regenerate_button.setIcon(QIcon(os.path.join(BASEDIR, "refresh-icon.png")))
         self.regenerate_button.setIconSize(QSize(20, 20))
         self.regenerate_button.setToolTip("Generate another password")
         self.regenerate_button.clicked.connect(self.regenerate_password)
